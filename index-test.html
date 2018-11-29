@@ -9,13 +9,19 @@
   </head>
   <body>
     <div id='app'>
-      <v-calendar></v-calendar>
+      <v-calendar
+        :attributes="attrs"
+        :date-info="dateInfo"
+        :threshold-disabled-date="[2019, 4, 25]"
+        is-expanded
+      >
+      </v-calendar>
       <v-date-picker :mode='mode' v-model='selectedDate'></v-date-picker>
     </div>
     <!--2. Link Vue Javascript-->
     <script src='https://unpkg.com/vue/dist/vue.js'></script>
     <!--3. Link VCalendar Javascript (Plugin automatically installed)-->
-    <script src='./lib/v-calendar.min.js'></script>
+    <script type="text/javascript" src="/v-calendar.js"></script></body>
     <script>
       // 4. Create the Vue instance
       new Vue({
@@ -24,6 +30,83 @@
           // Data used by the date picker
           mode: 'single',
           selectedDate: null,
+          disabledDates: [
+          ],
+          enabledDates: [
+          ],
+          dateInfo: [
+            { date: [2019, 4, 5], status: 1, value: '○', isVisible: true },
+            { date: [2019, 4, 6], status: 1, value: '○', isVisible: true },
+            { date: [2019, 4, 7], status: 1, value: '○', isVisible: true },
+            { date: [2019, 4, 8], status: 3, value: '☓', isVisible: true },
+            { date: [2019, 4, 9], status: 1, value: '○', isVisible: true },
+            { date: [2019, 4, 10], status: 1, value: '○', isVisible: true },
+            { date: [2019, 4, 11], status: 1, value: '○', isVisible: true },
+            { date: [2019, 4, 12], status: 0, value: '○', isVisible: true, isHoliday: true },
+            { date: [2019, 4, 13], status: 0, value: '○', isVisible: true },
+            { date: [2019, 4, 14], status: 0, value: '○', isVisible: true },
+            { date: [2019, 4, 15], status: 3, value: '☓', isVisible: true },
+            { date: [2019, 4, 16], status: 1, value: '○', isVisible: true },
+            { date: [2019, 4, 17], status: 1, value: '○', isVisible: true },
+            { date: [2019, 4, 18], status: 1, value: '○', isVisible: true },
+            { date: [2019, 4, 19], status: 1, value: '○', isVisible: true },
+            { date: [2019, 4, 20], status: 1, value: '○', isVisible: true },
+            { date: [2019, 4, 21], status: 1, value: '○', isVisible: true },
+            { date: [2019, 4, 22], status: 2, value: '△', isVisible: true, isHoliday: true },
+            { date: [2019, 4, 23], status: 4, value: '待', isVisible: true },
+            { date: [2019, 4, 24], status: 1, value: '○', isVisible: true },
+            { date: [2019, 4, 25], status: 1, value: '○', isVisible: true },
+            { date: [2019, 4, 26], status: 1, value: '○', isVisible: true },
+            { date: [2019, 4, 27], status: 1, value: '○', isVisible: true },
+            { date: [2019, 4, 28], status: 1, value: '○', isVisible: true },
+            { date: [2019, 4, 29], status: 0, value: '○', isVisible: true },
+            { date: [2019, 4, 30], status: 0, value: '○', isVisible: true },
+            { date: [2019, 5, 1], status: 0, value: '○', isVisible: true },
+            { date: [2019, 5, 2], status: 0, value: '○', isVisible: true },
+            { date: [2019, 5, 3], status: 0, value: '○', isVisible: true },
+            { date: [2019, 5, 4], status: 0, value: '○', isVisible: true },
+            { date: [2019, 5, 5], status: 0, value: '○', isVisible: true },
+            { date: [2019, 5, 6], status: 0, value: '○', isVisible: true },
+            { date: [2019, 5, 7], status: 0, value: '○', isVisible: true },
+            { date: [2019, 5, 8], status: 1, value: '○', isVisible: true },
+            { date: [2019, 5, 9], status: 1, value: '○', isVisible: true },
+            { date: [2019, 5, 10], status: 1, value: '○', isVisible: true },
+            { date: [2019, 5, 11], status: 1, value: '○', isVisible: true },
+            { date: [2019, 5, 12], status: 1, value: '○', isVisible: true },
+            { date: [2019, 5, 13], status: 1, value: '○', isVisible: true },
+            { date: [2019, 5, 14], status: 1, value: '○', isVisible: true },
+            { date: [2019, 5, 15], status: 3, value: '☓', isVisible: true },
+            { date: [2019, 5, 16], status: 1, value: '○', isVisible: true },
+            { date: [2019, 5, 17], status: 1, value: '○', isVisible: true },
+            { date: [2019, 5, 18], status: 1, value: '○', isVisible: true },
+            { date: [2019, 5, 19], status: 1, value: '○', isVisible: true },
+            { date: [2019, 5, 20], status: 1, value: '○', isVisible: true },
+            { date: [2019, 5, 21], status: 1, value: '○', isVisible: true },
+            { date: [2019, 5, 22], status: 1, value: '○', isVisible: true },
+            { date: [2019, 5, 23], status: 1, value: '○', isVisible: true },
+            { date: [2019, 5, 24], status: 1, value: '○', isVisible: true },
+            { date: [2019, 5, 25], status: 1, value: '○', isVisible: true },
+            { date: [2019, 5, 26], status: 1, value: '○', isVisible: true },
+            { date: [2019, 5, 27], status: 1, value: '○', isVisible: true },
+            { date: [2019, 5, 28], status: 1, value: '○', isVisible: true },
+            { date: [2019, 5, 29], status: 1, value: '○', isVisible: true },
+            { date: [2019, 5, 30], status: 1, value: '○', isVisible: true },
+            { date: [2019, 5, 31], status: 1, value: '○, isVisible: true' }
+          ],
+          attrs: [
+            {
+              key: 'today',
+              highlight: {
+                backgroundColor: '#0066CC',
+                width: '30px',
+                height: '30px'
+              },
+              contentStyle: {
+                color: '#fafafa'
+              },
+              dates: [],
+            }
+          ]
         }
       })
     </script>

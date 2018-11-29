@@ -3,6 +3,7 @@
   align='center'
   transition='fade'
   class='c-day-popover'
+  :class="{'is-holiday': day.isHoliday}"
   :content-offset='popoverContentOffset'
   :visibility='popoverVisibility'
   :content-style='popoverContentStyle'
@@ -36,7 +37,7 @@
       @mouseover='mouseover'
       @mouseleave='mouseleave'>
       <slot
-        name='day-content' 
+        name='day-content'
         :day='day'
         :content-style='contentStyle'
         :attributes='attributesList'>
@@ -45,6 +46,7 @@
           :style='contentStyle'>
           <div>
             {{ day.label }}
+            <div v-if="day.isVisible" v-html="day.value"></div>
           </div>
         </div>
       </slot>
@@ -172,6 +174,7 @@ export default {
       return {
         ...this.styles.dayCell,
         ...(!this.inMonth && this.styles.dayCellNotInMonth),
+        ...(this.day.isDisabled && { pointerEvents: 'none', opacity: 0.2 }),
       };
     },
     attributesLength() {

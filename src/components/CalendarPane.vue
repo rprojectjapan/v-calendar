@@ -22,8 +22,8 @@
       </div>
       <!--Header title-->
       <div
-        :class='["c-title-layout", titleClass]'>   
-        <!--Navigation popover--> 
+        :class='["c-title-layout", titleClass]'>
+        <!--Navigation popover-->
         <popover
           class='c-title-popover'
           direction='bottom'
@@ -127,6 +127,10 @@
         :next-month-comps='p.nextMonthComps'
         :styles='styles'
         :formats='formats'
+        :disabled-dates="disabledDates"
+        :enabled-dates="enabledDates"
+        :date-info="dateInfo"
+        :threshold-disabled-date="thresholdDisabledDate"
         v-bind='$attrs'
         @touchstart.passive='touchStart($event)'
         @touchmove.passive='touchMove($event)'
@@ -184,6 +188,10 @@ export default {
     paneWidth: Number,
     hideLeftButton: Boolean,
     hideRightButton: Boolean,
+    disabledDates: Array,
+    enabledDates: Array,
+    dateInfo: Array,
+    thresholdDisabledDate: Array,
   },
   data() {
     return {

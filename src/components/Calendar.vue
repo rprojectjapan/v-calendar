@@ -40,6 +40,10 @@ export default {
           styles: this.themeStyles_,
           attributes: this.attributes_,
           formats: this.formats_,
+          disabledDates: this.disabledDates,
+          enabledDates: this.enabledDates,
+          dateInfo: this.dateInfo,
+          thresholdDisabledDate: this.thresholdDisabledDate,
         },
         on: this.mergeListeners({
           'update:page': val => {
@@ -96,6 +100,19 @@ export default {
     themeStyles: Object,
     attributes: Array,
     formats: Object,
+    disabledDates: {
+      type: Array,
+      default: () => [],
+    },
+    enabledDates: {
+      type: Array,
+      default: () => [],
+    },
+    dateInfo: {
+      type: Array,
+      default: () => [],
+    },
+    thresholdDisabledDate: Array,
   },
   data() {
     return {
