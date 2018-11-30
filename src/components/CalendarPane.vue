@@ -128,6 +128,7 @@
         :styles='styles'
         :formats='formats'
         :disabled-dates="disabledDates"
+        :enabled-dates="enabledDates"
         v-bind='$attrs'
         @touchstart.passive='touchStart($event)'
         @touchmove.passive='touchMove($event)'
@@ -186,6 +187,7 @@ export default {
     hideLeftButton: Boolean,
     hideRightButton: Boolean,
     disabledDates: Array,
+    enabledDates: Array,
   },
   data() {
     return {

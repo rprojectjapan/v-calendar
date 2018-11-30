@@ -35,6 +35,7 @@ export default {
     nextMonthComps: Object,
     trimMaxWeek: Boolean,
     disabledDates: Array,
+    enabledDates: Array,
   },
   computed: {
     disabledDates_() {
@@ -42,6 +43,12 @@ export default {
         return [];
       }
       return this.disabledDates.map(item => item.join(''));
+    },
+    enabledDates_() {
+      if (!this.enabledDates) {
+        return [];
+      }
+      return this.enabledDates.map(item => item.join(''));
     },
     weeks() {
       const weeks = [];
@@ -142,6 +149,9 @@ export default {
   },
   methods: {
     isDisabled(year, month, day) {
+      if (this.enabledDates.length) {
+        return !this.enabledDates_.find(item => item === `${year}${month}${day}`);
+      }
       return !!this.disabledDates_.find(item => item === `${year}${month}${day}`);
     },
   },

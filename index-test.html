@@ -12,6 +12,7 @@
       <v-calendar
         :attributes="attrs"
         :disabled-dates="disabledDates"
+        :enabled-dates="enabledDates"
         is-expanded
       >
       </v-calendar>
@@ -34,6 +35,9 @@
             [2018, 11, 13],
             [2018, 11, 14],
             [2018, 11, 22],
+          ],
+          enabledDates: [
+            [2018, 11, 29]
           ],
           attrs: [
             {

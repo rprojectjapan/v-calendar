@@ -41,6 +41,7 @@ export default {
           attributes: this.attributes_,
           formats: this.formats_,
           disabledDates: this.disabledDates,
+          enabledDates: this.enabledDates,
         },
         on: this.mergeListeners({
           'update:page': val => {
@@ -98,6 +99,7 @@ export default {
     attributes: Array,
     formats: Object,
     disabledDates: Array,
+    enabledDates: Array,
   },
   data() {
     return {
