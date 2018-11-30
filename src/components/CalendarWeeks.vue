@@ -38,6 +38,9 @@ export default {
   },
   computed: {
     disabledDates_() {
+      if (!this.disabledDates) {
+        return [];
+      }
       return this.disabledDates.map(item => item.join(''));
     },
     weeks() {
@@ -139,7 +142,7 @@ export default {
   },
   methods: {
     isDisabled(year, month, day) {
-      return this.disabledDates_.find(item => item === `${year}${month}${day}`);
+      return !!this.disabledDates_.find(item => item === `${year}${month}${day}`);
     },
   },
 };
