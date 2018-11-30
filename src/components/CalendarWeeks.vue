@@ -39,6 +39,7 @@ export default {
   },
   computed: {
     disabledDates_() {
+      console.log(!this.disabledDates, this.disabledDates)
       if (!this.disabledDates) {
         return [];
       }

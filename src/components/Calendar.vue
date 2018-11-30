@@ -98,8 +98,14 @@ export default {
     themeStyles: Object,
     attributes: Array,
     formats: Object,
-    disabledDates: Array,
-    enabledDates: Array,
+    disabledDates: {
+      type: Array,
+      default: () => [],
+    },
+    enabledDates:  {
+      type: Array,
+      default: () => [],
+    },
   },
   data() {
     return {
