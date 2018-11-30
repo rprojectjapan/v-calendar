@@ -39,16 +39,9 @@ export default {
   },
   computed: {
     disabledDates_() {
-      console.log(!this.disabledDates, this.disabledDates)
-      if (!this.disabledDates) {
-        return [];
-      }
       return this.disabledDates.map(item => item.join(''));
     },
     enabledDates_() {
-      if (!this.enabledDates) {
-        return [];
-      }
       return this.enabledDates.map(item => item.join(''));
     },
     weeks() {
