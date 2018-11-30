@@ -40,6 +40,7 @@ export default {
           styles: this.themeStyles_,
           attributes: this.attributes_,
           formats: this.formats_,
+          disabledDates: this.disabledDates,
         },
         on: this.mergeListeners({
           'update:page': val => {
@@ -96,6 +97,7 @@ export default {
     themeStyles: Object,
     attributes: Array,
     formats: Object,
+    disabledDates: Array,
   },
   data() {
     return {

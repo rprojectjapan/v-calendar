@@ -1,5 +1,5 @@
 <template>
-<div> 
+<div>
   <div
     class='c-week'
     v-for='(week, i) in weeks'
@@ -34,8 +34,12 @@ export default {
     prevMonthComps: Object,
     nextMonthComps: Object,
     trimMaxWeek: Boolean,
+    disabledDates: Array,
   },
   computed: {
+    disabledDates_() {
+      return this.disabledDates.map(item => item.join(''));
+    },
     weeks() {
       const weeks = [];
       const { firstDayOfWeek, firstWeekday } = this.monthComps;
@@ -101,6 +105,7 @@ export default {
             inMonth: thisMonth,
             inPrevMonth: prevMonth,
             inNextMonth: nextMonth,
+            isDisabled: this.isDisabled(year, month, day),
           });
           // See if we've hit the last day of the month
           if (thisMonth && isLastDay) {
@@ -130,6 +135,11 @@ export default {
         weekFromEnd--;
       }
       return weeks;
+    },
+  },
+  methods: {
+    isDisabled(year, month, day) {
+      return this.disabledDates_.find(item => item === `${year}${month}${day}`);
     },
   },
 };

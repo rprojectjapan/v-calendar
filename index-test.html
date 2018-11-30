@@ -9,13 +9,18 @@
   </head>
   <body>
     <div id='app'>
-      <v-calendar></v-calendar>
+      <v-calendar
+        :attributes="attrs"
+        :disabled-dates="disabledDates"
+        is-expanded
+      >
+      </v-calendar>
       <v-date-picker :mode='mode' v-model='selectedDate'></v-date-picker>
     </div>
     <!--2. Link Vue Javascript-->
     <script src='https://unpkg.com/vue/dist/vue.js'></script>
     <!--3. Link VCalendar Javascript (Plugin automatically installed)-->
-    <script src='./lib/v-calendar.min.js'></script>
+    <script type="text/javascript" src="/v-calendar.js"></script></body>
     <script>
       // 4. Create the Vue instance
       new Vue({
@@ -24,6 +29,26 @@
           // Data used by the date picker
           mode: 'single',
           selectedDate: null,
+          disabledDates: [
+            [2018, 11, 7],
+            [2018, 11, 13],
+            [2018, 11, 14],
+            [2018, 11, 22],
+          ],
+          attrs: [
+            {
+              key: 'today',
+              highlight: {
+                backgroundColor: '#0066CC',
+                width: '30px',
+                height: '30px'
+              },
+              contentStyle: {
+                color: '#fafafa'
+              },
+              dates: [],
+            }
+          ]
         }
       })
     </script>

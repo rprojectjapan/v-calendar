@@ -36,7 +36,7 @@
       @mouseover='mouseover'
       @mouseleave='mouseleave'>
       <slot
-        name='day-content' 
+        name='day-content'
         :day='day'
         :content-style='contentStyle'
         :attributes='attributesList'>
@@ -172,6 +172,7 @@ export default {
       return {
         ...this.styles.dayCell,
         ...(!this.inMonth && this.styles.dayCellNotInMonth),
+        ...(this.day.isDisabled && { pointerEvents: 'none', opacity: 0.2 }),
       };
     },
     attributesLength() {

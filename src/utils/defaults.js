@@ -110,7 +110,7 @@ const defaults = {
     weekdaysHorizontalDivider: null,
     weeks: null,
     dayCell: null,
-    dayCellNotInMonth: { opacity: 0.4 },
+    dayCellNotInMonth: { opacity: 0.6 },
     dayContent: null,
     dayContentHover: null,
     dots: null,
