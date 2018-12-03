@@ -143,6 +143,9 @@ export default {
   },
   methods: {
     isDisabled(year, month, day) {
+      if (new Date(year, month - 1, day + 1).getTime() < new Date().getTime()) {
+        return true;
+      }
       if (this.enabledDates.length) {
         return !this.enabledDates_.find(item => item === `${year}${month}${day}`);
       }

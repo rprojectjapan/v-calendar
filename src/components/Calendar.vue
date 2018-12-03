@@ -102,7 +102,7 @@ export default {
       type: Array,
       default: () => [],
     },
-    enabledDates:  {
+    enabledDates: {
       type: Array,
       default: () => [],
     },
