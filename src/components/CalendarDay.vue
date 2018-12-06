@@ -45,6 +45,7 @@
           :style='contentStyle'>
           <div>
             {{ day.label }}
+            <div v-if="day.isVisible" v-html="day.value"></div>
           </div>
         </div>
       </slot>

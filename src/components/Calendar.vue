@@ -42,6 +42,7 @@ export default {
           formats: this.formats_,
           disabledDates: this.disabledDates,
           enabledDates: this.enabledDates,
+          dateInfo: this.dateInfo,
         },
         on: this.mergeListeners({
           'update:page': val => {
@@ -103,6 +104,10 @@ export default {
       default: () => [],
     },
     enabledDates: {
+      type: Array,
+      default: () => [],
+    },
+    dateInfo: {
       type: Array,
       default: () => [],
     },

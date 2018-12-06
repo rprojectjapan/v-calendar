@@ -36,6 +36,7 @@ export default {
     trimMaxWeek: Boolean,
     disabledDates: Array,
     enabledDates: Array,
+    dateInfo: Array,
   },
   computed: {
     disabledDates_() {
@@ -89,6 +90,8 @@ export default {
           const isToday = day === todayComps.day && month === todayComps.month && year === todayComps.year;
           const isFirstDay = thisMonth && day === 1;
           const isLastDay = thisMonth && day === this.monthComps.days;
+          const dateStr = `${year}${month}${day}`;
+          const dateData = this.getTargetDate(dateStr);
           days.push({
             id: `${month}.${day}`,
             label: day.toString(),
@@ -110,6 +113,9 @@ export default {
             inPrevMonth: prevMonth,
             inNextMonth: nextMonth,
             isDisabled: this.isDisabled(year, month, day),
+            status: dateData ? dateData.status : null,
+            value: dateData ? dateData.value : null,
+            isVisible: dateData ? dateData.isVisible : null,
           });
           // See if we've hit the last day of the month
           if (thisMonth && isLastDay) {
@@ -150,6 +156,9 @@ export default {
         return !this.enabledDates_.find(item => item === `${year}${month}${day}`);
       }
       return !!this.disabledDates_.find(item => item === `${year}${month}${day}`);
+    },
+    getTargetDate(dateStr) {
+      return this.dateInfo.find(item => item.date.join('') === dateStr);
     },
   },
 };
