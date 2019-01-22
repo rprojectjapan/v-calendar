@@ -37,6 +37,7 @@ export default {
     disabledDates: Array,
     enabledDates: Array,
     dateInfo: Array,
+    thresholdDisabledDate: Array,
   },
   computed: {
     disabledDates_() {
@@ -44,6 +45,10 @@ export default {
     },
     enabledDates_() {
       return this.enabledDates.map(item => item.join(''));
+    },
+    thresholdDisabledDate_() {
+      const date = this.thresholdDisabledDate ? new Date(this.thresholdDisabledDate[0], this.thresholdDisabledDate[1] - 1, this.thresholdDisabledDate[2]) : new Date();
+      return new Date(date.toDateString());
     },
     weeks() {
       const weeks = [];
@@ -149,7 +154,7 @@ export default {
   },
   methods: {
     isDisabled(year, month, day) {
-      if (new Date(year, month - 1, day + 1).getTime() < new Date().getTime()) {
+      if (new Date(year, month - 1, day).getTime() < this.thresholdDisabledDate_.getTime()) {
         return true;
       }
       if (this.enabledDates.length) {

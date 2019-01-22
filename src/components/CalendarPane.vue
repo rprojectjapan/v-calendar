@@ -130,6 +130,7 @@
         :disabled-dates="disabledDates"
         :enabled-dates="enabledDates"
         :date-info="dateInfo"
+        :threshold-disabled-date="thresholdDisabledDate"
         v-bind='$attrs'
         @touchstart.passive='touchStart($event)'
         @touchmove.passive='touchMove($event)'
@@ -190,6 +191,7 @@ export default {
     disabledDates: Array,
     enabledDates: Array,
     dateInfo: Array,
+    thresholdDisabledDate: Array,
   },
   data() {
     return {

@@ -43,6 +43,7 @@ export default {
           disabledDates: this.disabledDates,
           enabledDates: this.enabledDates,
           dateInfo: this.dateInfo,
+          thresholdDisabledDate: this.thresholdDisabledDate,
         },
         on: this.mergeListeners({
           'update:page': val => {
@@ -111,6 +112,7 @@ export default {
       type: Array,
       default: () => [],
     },
+    thresholdDisabledDate: Array,
   },
   data() {
     return {
