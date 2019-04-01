@@ -121,6 +121,7 @@ export default {
             status: dateData ? dateData.status : null,
             value: dateData ? dateData.value : null,
             isVisible: dateData ? dateData.isVisible : null,
+            isHoliday: dateData ? dateData.isHoliday : false
           });
           // See if we've hit the last day of the month
           if (thisMonth && isLastDay) {

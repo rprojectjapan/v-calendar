@@ -3,6 +3,7 @@
   align='center'
   transition='fade'
   class='c-day-popover'
+  :class="{'is-holiday': day.isHoliday}"
   :content-offset='popoverContentOffset'
   :visibility='popoverVisibility'
   :content-style='popoverContentStyle'
