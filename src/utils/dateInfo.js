@@ -88,7 +88,7 @@ function dateShallowIntersectsDate(date1, date2) {
 export function getDayFromDate(date) {
   if (!date) return null;
   const month = date.getMonth() + 1;
-  const year = date.getUTCFullYear();
+  const year = date.getFullYear();
   const comps = getMonthComps(month, year);
   const day = date.getDate();
   const dayFromEnd = comps.days - day + 1;
@@ -156,7 +156,7 @@ function diffInWeeks(d1, d2) {
 }
 
 function diffInYears(d1, d2) {
-  return d2.getUTCFullYear() - d1.getUTCFullYear();
+  return d2.getFullYear() - d1.getFullYear();
 }
 
 function diffInMonths(d1, d2) {
