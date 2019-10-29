@@ -41,10 +41,10 @@ export default {
   },
   computed: {
     disabledDates_() {
-      return this.disabledDates.map(item => item.join(''));
+      return this.disabledDates.map(item => item.join('-'));
     },
     enabledDates_() {
-      return this.enabledDates.map(item => item.join(''));
+      return this.enabledDates.map(item => item.join('-'));
     },
     thresholdDisabledDate_() {
       const date = this.thresholdDisabledDate ? new Date(this.thresholdDisabledDate[0], this.thresholdDisabledDate[1] - 1, this.thresholdDisabledDate[2]) : new Date();
@@ -95,7 +95,7 @@ export default {
           const isToday = day === todayComps.day && month === todayComps.month && year === todayComps.year;
           const isFirstDay = thisMonth && day === 1;
           const isLastDay = thisMonth && day === this.monthComps.days;
-          const dateStr = `${year}${month}${day}`;
+          const dateStr = `${year}-${month}-${day}`;
           const dateData = this.getTargetDate(dateStr);
           days.push({
             id: `${month}.${day}`,
@@ -159,12 +159,12 @@ export default {
         return true;
       }
       if (this.enabledDates.length) {
-        return !this.enabledDates_.find(item => item === `${year}${month}${day}`);
+        return !this.enabledDates_.find(item => item === `${year}-${month}-${day}`);
       }
-      return !!this.disabledDates_.find(item => item === `${year}${month}${day}`);
+      return !!this.disabledDates_.find(item => item === `${year}-${month}-${day}`);
     },
     getTargetDate(dateStr) {
-      return this.dateInfo.find(item => item.date.join('') === dateStr);
+      return this.dateInfo.find(item => item.date.join('-') === dateStr);
     },
   },
 };
