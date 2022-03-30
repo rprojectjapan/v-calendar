@@ -136,9 +136,9 @@ import {
   arrayHasItems,
   objectFromArray,
   mixinOptionalProps,
-} from '@/utils/helpers';
-import { isFunction, isObject } from '@/utils/typeCheckers';
-import defaults from '@/utils/defaults';
+} from '../utils/helpers';
+import { isFunction, isObject } from '../utils/typeCheckers';
+import defaults from '../utils/defaults';
 
 export default {
   components: {

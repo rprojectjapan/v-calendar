@@ -34,7 +34,7 @@
 
 <script>
 import SvgIcon from './SvgIcon';
-import { format } from '@/utils/fecha';
+import { format } from '../utils/fecha';
 
 export default {
   components: {
@@ -105,5 +105,5 @@ export default {
     color: #ffb366
   .vc-moon-o
     color: #4d4d64
-    
+
 </style>

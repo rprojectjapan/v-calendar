@@ -140,15 +140,15 @@
 
 <script>
 import SvgIcon from './SvgIcon';
-import DateInfo from '@/utils/dateInfo';
-import { format } from '@/utils/fecha';
+import DateInfo from '../utils/dateInfo';
+import { format } from '../utils/fecha';
 import {
   getMonthComps,
   getFirstArrayItem,
   getLastArrayItem,
   getMonthDates,
   evalFn,
-} from '@/utils/helpers';
+} from '../utils/helpers';
 
 const _yearGroupCount = 12;
 

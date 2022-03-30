@@ -1,4 +1,4 @@
-import DateInfo, { addDays, getDayFromDate } from '@/utils/dateInfo';
+import DateInfo, { addDays, getDayFromDate } from '../utils/dateInfo';
 import dayData from '../util/dayData.json';
 
 describe('addDays', () => {

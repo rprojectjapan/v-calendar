@@ -154,9 +154,9 @@ import Popover from './Popover';
 import CalendarWeeks from './CalendarWeeks';
 import CalendarNav from './CalendarNav';
 import SvgIcon from './SvgIcon';
-import defaults from '@/utils/defaults';
-import { getWeekdayDates, evalFn } from '@/utils/helpers';
-import { format } from '@/utils/fecha';
+import defaults from '../utils/defaults';
+import { getWeekdayDates, evalFn } from '../utils/helpers';
+import { format } from '../utils/fecha';
 
 import {
   todayComps,

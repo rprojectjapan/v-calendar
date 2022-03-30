@@ -2,7 +2,7 @@
 import CalendarPane from './CalendarPane';
 import AttributeStore from '../utils/attributeStore';
 import defaults from '../utils/defaults';
-import { mergeListeners } from '@/mixins';
+import { mergeListeners } from '../mixins';
 import {
   todayComps,
   pageIsEqualToPage,
@@ -67,13 +67,13 @@ export default {
       },
       [
         getPaneComponent(this.isDoublePaned_ ? 1 : 0),
-        ...(this.isDoublePaned_ && [
+        ...(this.isDoublePaned_ ? [
           h('div', {
             class: 'c-pane-div',
             style: this.dividerStyle,
           }),
           getPaneComponent(2),
-        ]),
+        ]: []),
       ],
     );
   },

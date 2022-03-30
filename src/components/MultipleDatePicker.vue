@@ -1,7 +1,7 @@
 <script>
 import Calendar from './Calendar';
 import { multipleHasValue, singleValuesAreEqual, multipleNormalizer } from '../utils/pickerProfiles';
-import { mergeListeners } from '@/mixins';
+import { mergeListeners } from '../mixins';
 
 export default {
   mixins: [mergeListeners],

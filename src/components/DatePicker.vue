@@ -4,14 +4,14 @@ import SingleDatePicker from './SingleDatePicker';
 import MultipleDatePicker from './MultipleDatePicker';
 import DateRangePicker from './DateRangePicker';
 import DatePickerDayPopover from './DatePickerDayPopover';
-import PickerProfile from '@/utils/pickerProfiles';
-import Attribute from '@/utils/attribute';
-import defaults, { resolveDefault } from '@/utils/defaults';
-import { addDays } from '@/utils/dateInfo';
-import { pageIsBetweenPages } from '@/utils/helpers';
-import { isString, isFunction, isObject, isArray } from '@/utils/typeCheckers';
-import { format, parse } from '@/utils/fecha';
-import { mergeListeners } from '@/mixins';
+import PickerProfile from '../utils/pickerProfiles';
+import Attribute from '../utils/attribute';
+import defaults, { resolveDefault } from '../utils/defaults';
+import { addDays } from '../utils/dateInfo';
+import { pageIsBetweenPages } from '../utils/helpers';
+import { isString, isFunction, isObject, isArray } from '../utils/typeCheckers';
+import { format, parse } from '../utils/fecha';
+import { mergeListeners } from '../mixins';
 
 export default {
   mixins: [mergeListeners],
